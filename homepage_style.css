@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  background-color: #c8b38b;
+  font-family: 'Kalam', cursive;
+}
+
+#scene-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#jungle-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#hud {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #f4f0e6;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hud-title {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.hud-subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.hint {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #ddcda6;
+}
+
+/* Floating info panels */
+.info-panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 240, 0.8);
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.info-panel img {
+  width: 40px;
+  height: 40px;
+}
+
+.info-panel:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Example placement */
+#projects-panel { bottom: 20%; left: 20%; }
+#resume-panel { bottom: 35%; right: 20%; }
+#interests-panel { bottom: 50%; left: 30%; }
+#contact-panel { bottom: 25%; right: 30%; }
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  background: #2d2a24;
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
+}
+
+#container3D{
+    position: fixed;
+    inset: 0;
+    /* background-color: red; */
+    z-index: 100;
+    pointer-events: none;
+}

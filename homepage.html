@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ini Bassey | The Jungle</title>
+  <link rel="stylesheet" href="homepage_style.css" />
+</head>
+<body>
+  <div id="scene-container">
+    <canvas id="jungle-canvas"></canvas>
+    <div id="hud">
+      <h1 class="hud-title">Welcome to My Grove</h1>
+      <p class="hud-subtitle">Walk around and discover my world 🌿</p>
+      <p class="hint">Use W/A/S/D or arrow keys to move</p>
+    </div>
+
+    <!-- Floating Info Panels -->
+    <div class="info-panel" id="projects-panel">
+      <img src="assets/project.png" alt="Projects" />
+      <p>Projects</p>
+    </div>
+    <div class="info-panel" id="resume-panel">
+      <img src="assets/resume.png" alt="Resume" />
+      <p>Resume</p>
+    </div>
+    <div class="info-panel" id="interests-panel">
+      <img src="assets/hobbies.png" alt="Interests" />
+      <p>Interests</p>
+    </div>
+    <div class="info-panel" id="contact-panel">
+      <img src="assets/contact-us.png" alt="Contact" />
+      <p>Contact</p>
+    </div>
+
+    <div id="overlay"></div>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="assets/website_lofi.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="container3D"> </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+  <script src="homepage_script.js"></script>
+</body>
+</html>
