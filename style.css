@@ -14,15 +14,6 @@ body {
   background: radial-gradient(#85c1ff,#5c95e0,#3f6ab6, #273f7f,#141959);
 }
 
-body.homepage {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  height: 100%;
-  background-color: #c8b38b;
-  font-family: 'Kalam', cursive;
-}
-
 #landing-container {
   position: relative;
   height: 100%;

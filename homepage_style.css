@@ -1,25 +1,206 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 
+:root {
+    --bg: linear-gradient(#5b8dd3, #949edc, #fbc0de, #f8b7bf, #f9b6b7, #fcb191, #9d7078);
+    --card: rgba(255, 255, 255, 0.65);       
+    --muted: #4b4b5a;                        
+    --accent: #e9749d;                       
+    --glass: rgba(255, 255, 255, 0.3);       
+}
+
+* { box-sizing: border-box; }
 body, html {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  height: 100%;
-  background-color: #c8b38b;
-  font-family: 'Kalam', cursive;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+    background: var(--bg);
+    color: #f4f0e6;
+    font-family: 'Kalam', cursive;
+    scroll-behavior: smooth;
 }
 
-#scene-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
+header {
+    position: fixed;
+    left: 0; right: 0; top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    z-index: 40;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(6px);
+    }
+
+.logo { 
+    display: flex; 
+    gap: 12px; 
+    align-items: center; }
+        
+.mark {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f7a6b9, #fbc0de);
+  box-shadow: 0 4px 12px rgba(250, 170, 190, 0.4);
 }
 
-#jungle-canvas {
+.name { 
+    font-weight: 800; 
+}
+
+.tagline { 
+    font-size: 13px; 
+    color: var(--muted); 
+}
+           
+nav { 
+    display: flex; 
+    gap: 14px; 
+}
+nav a { 
+    color: var(--muted); 
+    text-decoration: none; 
+    font-weight: 600; 
+}
+nav a:hover { 
+    color: var(--accent); 
+}
+
+/* Main layout */
+main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    margin: 2% auto ;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+section{
+    width: 100%;
+    min-height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    transform-style: inherit;
+    display: block;
+    padding: 5% 0; 
+    text-align: center;
+}
+
+#projects {
+  background: linear-gradient(135deg, #1e1e2f 0%, #5b8dd3 80%);
+}
+
+#interests {
+  background: linear-gradient(135deg, #2f1e2f 0%, #f8b7bf 85%);
+}
+
+#resume {
+  background: linear-gradient(135deg, #2f2f1e 0%, #fcb191 80%);
+}
+
+#contact {
+  background: linear-gradient(135deg, #2f2f1e 0%, #fcb191 80%);
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.circle-panel {
+  /* background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); */
+  background: var(--accent);
+  border-radius: 50%;     
+  aspect-ratio: 1 / 1; 
+  width: 70%;   
+  display: flex;           
+  align-items: center;
+  justify-content: center;
+  padding: 20px;    
+  cursor: pointer;
+  transition: grid-template-columns 0.6s ease, gap 0.6s ease;
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.5);          
+}
+
+.circle-panel:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+}
+.circle-panel h3{
+    color: #001322;
+    font-weight: 700;
+    align-items: center;
+}
+.circle-panel p{
+    color: #001322;
+    font-weight: 700;
+    align-items: center;
+}
+
+.hero { 
+    min-height: 70vh; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px;
+} 
+
+
+h1 { 
+    font-size: clamp(28px, 4.6vw, 44px); 
+    margin: 0; 
+}
+
+
+p.lead { 
+    color: var(--muted); 
+    margin: 0; 
+    max-width: 70ch; 
+}
+
+.section-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 16px;
+  min-height: 90%;
+  padding: 0 6vw;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .section-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+    background: var(--card);
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(250, 170, 190, 0.4);
+    cursor: pointer;
+}
+.card h3 { 
+    margin: 0 0 6px 0; 
+}
+.card p { 
+    margin: 0; 
+    color: var(--muted); 
+    font-size: 14px; 
+}
+
+
+
+/* #jungle-canvas {
   width: 100%;
   height: 100%;
   display: block;
-}
+  } */
+
 
 #hud {
   position: absolute;
@@ -72,10 +253,10 @@ body, html {
 }
 
 /* Example placement */
-#projects-panel { bottom: 20%; left: 20%; }
+/* #projects-panel { bottom: 20%; left: 20%; }
 #resume-panel { bottom: 35%; right: 20%; }
 #interests-panel { bottom: 50%; left: 30%; }
-#contact-panel { bottom: 25%; right: 30%; }
+#contact-panel { bottom: 25%; right: 30%; } */
 
 #overlay {
   position: absolute;

@@ -1,12 +1,18 @@
 import * as THREE from 'cdn.skypack.dev/three@0.160.0/build/three.module.js';
 import { GLTFLoader } from 'cdn.skypack.dev/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
 
+window.addEventListener('click', function() {
+  music.volume = 0.7;
+  music.play();
+}, { once: true });
+
+
 //Create scene
 const scene = new THREE.Scene();
-scene.fog = new THREE.FogExp2(0x223322, 0.03);
+// scene.fog = new THREE.FogExp2(0x223322, 0.03);
 let moon;
 const loader = new GLTFLoader();
-loader.load('/moon.glb', function (gltf) {
+loader.load('moon.glb', function (gltf) {
     moon = gltf.scene;
     scene.add(moon);
     },
@@ -18,7 +24,7 @@ loader.load('/moon.glb', function (gltf) {
 
 //Create camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 2, 10);
+camera.position.set(0, 5, 40);
 camera.position.z = 13;
 
 //Create renderer

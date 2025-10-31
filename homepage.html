@@ -3,45 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ini Bassey | The Jungle</title>
+  <title>Ini Bassey | Personal Portfolio</title>
   <link rel="stylesheet" href="homepage_style.css" />
 </head>
 <body>
-  <div id="scene-container">
-    <canvas id="jungle-canvas"></canvas>
-    <div id="hud">
-      <h1 class="hud-title">Welcome to My Grove</h1>
-      <p class="hud-subtitle">Walk around and discover my world 🌿</p>
-      <p class="hint">Use W/A/S/D or arrow keys to move</p>
+    <header>
+    <div class="logo">
+      <div class="mark"></div>
+      <div>
+        <div class="name">Ini Bassey</div>
+        <div class="tagline">web developer · mechanical engineer · book lover </div>
+      </div>
     </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    </header>
 
-    <!-- Floating Info Panels -->
-    <div class="info-panel" id="projects-panel">
-      <img src="assets/project.png" alt="Projects" />
-      <p>Projects</p>
-    </div>
-    <div class="info-panel" id="resume-panel">
-      <img src="assets/resume.png" alt="Resume" />
-      <p>Resume</p>
-    </div>
-    <div class="info-panel" id="interests-panel">
-      <img src="assets/hobbies.png" alt="Interests" />
-      <p>Interests</p>
-    </div>
-    <div class="info-panel" id="contact-panel">
-      <img src="assets/contact-us.png" alt="Contact" />
-      <p>Contact</p>
-    </div>
+    <main>
+        <section id="home">
+            <!-- <canvas id="jungle-canvas"></canvas> -->
+            <div id="hud">
+                <h1 class="hud-title">Welcome to My Grove</h1>
+                <p class="hud-subtitle">Walk around and discover my world 🌿</p>
+                <p class="hint">Use W/A/S/D or arrow keys to move</p>
+            </div>
 
-    <div id="overlay"></div>
-  </div>
+                <!-- Floating Info Panels -->
+            <div class="info-panel" id="projects-panel">
+                <img src="assets/project.png" alt="Projects" />
+                <p>Projects</p>
+            </div>
+            <div class="info-panel" id="resume-panel">
+                <img src="assets/resume.png" alt="Resume" />
+                <p>Resume</p>
+            </div>
+            <div class="info-panel" id="interests-panel">
+                <img src="assets/hobbies.png" alt="Interests" />
+                <p>Interests</p>
+            </div>
+            <div class="info-panel" id="contact-panel">
+                <img src="assets/contact-us.png" alt="Contact" />
+                <p>Contact</p>
+            </div>
+        </section>       
+        
+        <!-- PROJECTS PAGE 2 -->
+        <section id="projects">
+            <h2>Ini's Engineering Makerspace!</h2>
+            <div class="section-container">
+                <article class="panel"><h3>SOFTWARE</h3>
+                    <p class="card">Three.js landing with parallax and subtle physics.</p>
+                    <p class="card">E-Tracker: Web application that tracks even patterns and performs data analytics using pattern recognition and optimization algorithms</p>
+                    <p class="card">To-do app: Personal planner with added cross-functionality with </p>
+                </article>
+                <article class="panel"><h3>MECHANICAL</h3>
+                    <p class="card">Mario VGA Game: </p>
+                    <p class="card">Pendulum PID Compensator: </p>
+                    <p class="card">K-Truss Bridge: </p>
+                </article>
+            </div>           
+        </section>
+
+
+        <section id="interests">
+            <h2>Who is Ini Beyond Engineering?</h2>
+            <div class="section-container">
+                <article class="circle-panel"><h3>SOFTWARE</h3>
+                    <!-- <p class="card">Three.js landing with parallax and subtle physics.</p>
+                    <p class="card">E-Tracker: Web application that tracks even patterns and performs data analytics using pattern recognition and optimization algorithms</p>
+                    <p class="card">To-do app: Personal planner with added cross-functionality with </p> -->
+                </article>
+                <article class="circle-panel"><h3>MECHANICAL</h3>
+                    <!-- <p class="card">Mario VGA Game: </p>
+                    <p class="card">Pendulum PID Compensator: </p>
+                    <p class="card">K-Truss Bridge: </p> -->
+                </article>
+                <article class="circle-panel"><h3>Interests</h3></article>
+                <article class="circle-panel"><h3>Interests</h3></article>
+                <article class="circle-panel"><h3>Interests</h3></article>
+                <article class="circle-panel"><h3>Interests</h3></article>
+        </section>
+
+        <section id="contact">
+            <h2>About This Portfolio</h2>
+            <p>This interactive 3D portfolio is built using Three.js, showcasing my skills in web development and design. Explore the grove to learn more about me and my work!</p>
+        </section>
+    </main>
 
   <audio id="bg-music" loop>
     <source src="assets/website_lofi.mp3" type="audio/mpeg">
   </audio>
 
   <div id="container3D"> </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
-  <script src="homepage_script.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+  <script src="homepage_script.js"></script> -->
 </body>
 </html>
