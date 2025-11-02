@@ -1,10 +1,48 @@
-import * as THREE from 'cdn.skypack.dev/three@0.160.0/build/three.module.js';
-import { GLTFLoader } from 'cdn.skypack.dev/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from 'https://cdn.skypack.dev/three@0.160.0/build/three.module.js';
+import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
 
-window.addEventListener('click', function() {
-  music.volume = 0.7;
-  music.play();
-}, { once: true });
+// const cloud = document.getElementById("cloud1");
+// const music = document.getElementById("bg-music");
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cloud = document.getElementById("cloud1");
+  const music = document.getElementById("bg-music")
+
+cloud.addEventListener("click", function () {
+if (music.paused) {
+    music.volume = 0.8;
+    cloud.querySelector("p").textContent = "Pause Music";
+    music.play().catch(err => console.log('Playback error:', err));
+} else {
+    music.pause(); // Optional: toggles play/pause
+    cloud.querySelector("p").textContent = "Play Music";
+} });
+});
+
+const cloudContainer = document.getElementById("clouds");
+const numClouds = 10; // how many clouds you want
+
+for (let i = 0; i < numClouds; i++) {
+  const cloud = document.createElement("div");
+  cloud.classList.add("cloud");
+
+  // Random position and size
+  const size = Math.random() * 120 + 80; // 80–200px
+  cloud.style.width = `${size}px`;
+  cloud.style.height = `${size * 0.6}px`;
+  cloud.style.top = `${Math.random() * 80}%`;
+  cloud.style.left = `${Math.random() * 90}%`;
+  cloud.style.opacity = 0.4 + Math.random() * 0.3;
+
+  // Random animation timing so they don’t sync
+  cloud.style.animationDuration = `${8 + Math.random() * 6}s`;
+  cloud.style.animationDelay = `${Math.random() * 5}s`;
+
+  cloudContainer.appendChild(cloud);
+}
+
+
+
 
 
 //Create scene

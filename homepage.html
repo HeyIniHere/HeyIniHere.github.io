@@ -26,27 +26,28 @@
 
     <main>
         <section id="home">
-            <!-- <canvas id="jungle-canvas"></canvas> -->
-            <div id="hud">
+            <h2>Welcome to My Grove🌿</h2>
+            <!-- <div id="hud">
                 <h1 class="hud-title">Welcome to My Grove</h1>
-                <p class="hud-subtitle">Walk around and discover my world 🌿</p>
+                <p class="hud-subtitle">Float around and discover my world </p>
                 <p class="hint">Use W/A/S/D or arrow keys to move</p>
-            </div>
+            </div> -->
+            <div id="clouds"></div>
 
                 <!-- Floating Info Panels -->
-            <div class="info-panel" id="projects-panel">
+            <div class="info-panel" id="cloud1">
                 <img src="assets/project.png" alt="Projects" />
-                <p>Projects</p>
+                <p>Play Music</p>
             </div>
-            <div class="info-panel" id="resume-panel">
+            <div class="info-panel" id="cloud2">
                 <img src="assets/resume.png" alt="Resume" />
                 <p>Resume</p>
             </div>
-            <div class="info-panel" id="interests-panel">
+            <div class="info-panel" id="cloud3">
                 <img src="assets/hobbies.png" alt="Interests" />
                 <p>Interests</p>
             </div>
-            <div class="info-panel" id="contact-panel">
+            <div class="info-panel" id="cloud4">
                 <img src="assets/contact-us.png" alt="Contact" />
                 <p>Contact</p>
             </div>
@@ -73,20 +74,30 @@
         <section id="interests">
             <h2>Who is Ini Beyond Engineering?</h2>
             <div class="section-container">
-                <article class="circle-panel"><h3>SOFTWARE</h3>
-                    <!-- <p class="card">Three.js landing with parallax and subtle physics.</p>
-                    <p class="card">E-Tracker: Web application that tracks even patterns and performs data analytics using pattern recognition and optimization algorithms</p>
-                    <p class="card">To-do app: Personal planner with added cross-functionality with </p> -->
+                <article class="circle-panel" id="cooking">
+                    <img src="assets/cooking.png" alt="Cooking" />
+                    <h3>Cooking</h3>
                 </article>
-                <article class="circle-panel"><h3>MECHANICAL</h3>
-                    <!-- <p class="card">Mario VGA Game: </p>
-                    <p class="card">Pendulum PID Compensator: </p>
-                    <p class="card">K-Truss Bridge: </p> -->
+                <article class="circle-panel", id="3d-printing">
+                    <img src="assets/3d-printing.png" alt="3D Printer" />
+                    <h3>3D Printing</h3>
                 </article>
-                <article class="circle-panel"><h3>Interests</h3></article>
-                <article class="circle-panel"><h3>Interests</h3></article>
-                <article class="circle-panel"><h3>Interests</h3></article>
-                <article class="circle-panel"><h3>Interests</h3></article>
+                <article class="circle-panel" id="music">
+                    <img src="assets/harp.png" alt="Harp" />
+                    <h3>Harp</h3>   
+                </article>
+                <article class="circle-panel" id ="reading">
+                    <img src="assets/books.png" alt="Books" />
+                    <h3>Reading</h3>
+                </article>
+                <article class="circle-panel" id="travel">
+                    <img src="assets/airplane.png" alt="Plane" />
+                    <h3>Travel</h3>
+                </article>
+                <article class="circle-panel" id="shopping">
+                    <img src="assets/woman.png" alt="Shopping" />
+                    <h3>Shopping</h3>
+                </article>
         </section>
 
         <section id="contact">
@@ -100,7 +111,7 @@
   </audio>
 
   <div id="container3D"> </div>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
-  <script src="homepage_script.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script> -->
+  <script type= module src="homepage_script.js"></script>
 </body>
 </html>

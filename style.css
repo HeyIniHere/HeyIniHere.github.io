@@ -11,7 +11,9 @@ body {
   width: 100%;
   font-family: 'Kalam', cursive;
   overflow: hidden;
-  background: radial-gradient(#85c1ff,#5c95e0,#3f6ab6, #273f7f,#141959);
+  background: radial-gradient(circle at center, #ffd6e0 0%, #f9b6c7 30%,#f6a0b8 55%,#e68bb2 75%,#c47ac0 90%,#6e4b8a 100%   
+);
+
 }
 
 #landing-container {
@@ -51,7 +53,7 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: radial-gradient(circle at center, #a1edfe 0%, #9fd9ff 60%,#9fd9ff 100%);
+  background: radial-gradient(circle at center,#ffe0eb 0%,#f9b6c7 50%,#f6a0b8 100%,);
   box-shadow: 0 0 40px rgba(255, 235, 150, 0.7);
   display: flex;
   align-items: center;
