@@ -1,40 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 
 :root {
-    --bg: linear-gradient(#5b8dd3, #949edc, #fbc0de, #f8b7bf, #f9b6b7, #fcb191, #9d7078);
-    --card: rgba(255, 255, 255, 0.65);       
-    --muted: #4b4b5a;                        
-    --accent: #e9749d;                       
-    --glass: rgba(255, 255, 255, 0.3);       
+  --bg: linear-gradient(#5b8dd3, #949edc, #fbc0de, #f8b7bf, #f9b6b7, #fcb191, #9d7078);
+  --card: rgba(255, 255, 255, 0.65);       
+  --muted: #4b4b5a;                        
+  --accent: #e9749d;                       
+  --glass: rgba(255, 255, 255, 0.3);       
 }
 
 * { box-sizing: border-box; }
 body, html {
-    margin: 0;
-    overflow: hidden;
-    height: 100%;
-    background: var(--bg);
-    color: #f4f0e6;
-    font-family: 'Kalam', cursive;
-    scroll-behavior: smooth;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  background: var(--bg);
+  color: #f4f0e6;
+  font-family: 'Kalam', cursive;
+  scroll-behavior: smooth;
 }
 
 header {
-    position: fixed;
-    left: 0; right: 0; top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 20px;
-    z-index: 40;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
-    backdrop-filter: blur(6px);
+  position: fixed;
+  left: 0; right: 0; top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  z-index: 40;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(6px);
     }
 
 .logo { 
-    display: flex; 
-    gap: 12px; 
-    align-items: center; }
+  display: flex; 
+  gap: 12px; 
+  align-items: center; }
         
 .mark {
   width: 36px; height: 36px;
@@ -44,25 +44,25 @@ header {
 }
 
 .name { 
-    font-weight: 800; 
+  font-weight: 800; 
 }
 
 .tagline { 
-    font-size: 13px; 
-    color: var(--muted); 
+  font-size: 13px; 
+  color: var(--muted); 
 }
            
 nav { 
-    display: flex; 
-    gap: 14px; 
+  display: flex; 
+  gap: 14px; 
 }
 nav a { 
-    color: var(--muted); 
-    text-decoration: none; 
-    font-weight: 600; 
+  color: var(--muted); 
+  text-decoration: none; 
+  font-weight: 600; 
 }
 nav a:hover { 
-    color: var(--accent); 
+  color: var(--accent); 
 }
 
 /* XP bar in header */
@@ -75,9 +75,9 @@ nav a:hover {
 }
 
 .xp-bar {
-  width: 280px;       /* adjust width */
-  height: 14px;       /* adjust height */
-  background: rgba(255, 255, 255, 0.2); /* semi-transparent to match background */
+  width: 280px;      
+  height: 14px;      
+  background: rgba(255, 255, 255, 0.2); 
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -100,25 +100,25 @@ nav a:hover {
 
 /* Main layout */
 main {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    display: flex;
-    flex-direction: column;
-    margin: 2% auto ;
-    width: 100%;
-    height: 100%;
-    position: relative;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  margin: 2% auto ;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 section{
-    width: 100%;
-    min-height: 100vh;
-    scroll-snap-align: start;
-    position: relative;
-    transform-style: inherit;
-    display: block;
-    padding: 5% 0; 
-    text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+  transform-style: inherit;
+  display: block;
+  padding: 5% 0; 
+  text-align: center;
 }
 
 
@@ -132,18 +132,18 @@ section{
 }
 
 .circle-panel {
-    width: 200px;
-    height: 200px;
-    background: var(--accent);
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 20px rgba(2, 6, 23, 0.5);       
+  width: 200px;
+  height: 200px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.5);       
 }
 
 .circle-panel:hover {
@@ -152,41 +152,22 @@ section{
 }
 
 .circle-panel h3{
-    color: #001322;
-    font-weight: 700;
-    font-size: 1.1rem;
+  color: #001322;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 .circle-panel img{
-    width: 64px;
-    height: 64px;
-    margin-bottom: 10px;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
 }
 .circle-panel p{
-    color: #001322;
-    font-weight: 700;
-    align-items: center;
+  color: #001322;
+  font-weight: 700;
+  align-items: center;
 }
 
-.hero { 
-    min-height: 70vh; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 12px;
-} 
-
-
-h1 { 
-    font-size: clamp(28px, 4.6vw, 44px); 
-    margin: 0; 
-}
-
-
-p.lead { 
-    color: var(--muted); 
-    margin: 0; 
-    max-width: 70ch; 
-}
 
 .section-container {
   display: grid;
@@ -199,12 +180,12 @@ p.lead {
 }
 
 #interests .section-container {
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center; /* centers the circles horizontally */
-    align-items: center;
-    gap: 40px;
-    padding: 0 8vw;
-    gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; 
+  align-items: center;
+  gap: 40px;
+  padding: 0 8vw;
+  gap: 40px;
 }
 
 .card {
@@ -216,41 +197,47 @@ p.lead {
   color: var(--muted);
 }
 
-/* Moving Clouds Animation */
+
 /* Bottom cloud animation */
 .bottom-clouds {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    pointer-events: none; /* so clouds don’t block interaction */
-    height: 100%; /* adjust as needed */
-    z-index: 10;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none; /* so clouds don’t block interaction */
+  height: 100%; /* adjust as needed */
+  z-index: 10;
 }
 
 .bottom-clouds img {
-    position: absolute;
-    bottom: 0;
-    opacity: 0.6;
-    animation: moveCloud calc(8s * var(--i)) linear infinite;
-    max-width: 100%; /* adjust size of clouds */
+  position: absolute;
+  bottom: 0;
+  opacity: 0.6;
+  animation: moveCloud calc(8s * var(--i)) linear infinite;
+  max-width: 100%; /* adjust size of clouds */
 }
 
-/* Cloud movement keyframes */
+.bottom-clouds img.cloud {
+  --i: 1; /* default, overridden by nth-child */
+}
+
+.bottom-clouds img.cloud:nth-child(1) { --i: 1; }
+.bottom-clouds img.cloud:nth-child(2) { --i: 2; }
+.bottom-clouds img.cloud:nth-child(3) { --i: 3; }
+.bottom-clouds img.cloud:nth-child(4) { --i: 4; }
+.bottom-clouds img.cloud:nth-child(5) { --i: 5; }
+
+
 @keyframes moveCloud {
-    0% {
-        transform: translateX(-150%);
-    }
-    100% {
-        transform: translateX(110%);
-    }
+  0% { transform: translateX(-150%);}
+  100% {transform: translateX(110%);}
 }
 
 /*Lanterns Animation */
 .lantern {
   position: absolute;
-  width: 60px;      /* size of lantern */
+  width: 60px;    
   height: 80px;
   background: url('assets/sky-lantern.png') no-repeat center/contain;
   cursor: pointer;
@@ -291,12 +278,11 @@ p.lead {
   transition: opacity 0.5s ease;
 }
 
-/* Optional: fade-in class */
 #instruction-text.visible {
   opacity: 1;
 }
 
-/* Fact Box */
+
 .fact-box {
   position: fixed;
   transform: translate(-50%, -50%);
@@ -317,13 +303,12 @@ p.lead {
   text-align: center;
 }
 
-/* Smooth fade & float up */
+
 .fact-box.fade-out {
   opacity: 0;
   transform: translate(-50%, -120%);
 }
 
-/* Optional: glowing edge for warmth */
 .fact-box::after {
   content: '';
   position: absolute;
@@ -373,41 +358,13 @@ p.lead {
   font-size: 1rem;
 }
 
-
-
 h2{
-    color: #f4f0e6;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-
-}
-
-#hud {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
   color: #f4f0e6;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+
 }
 
-.hud-title {
-  font-size: 2rem;
-  margin-bottom: 0.3rem;
-}
 
-.hud-subtitle {
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-.hint {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: #ddcda6;
-}
-
-/* Floating info panels */
 /* Cloudy info panels */
 .info-panel {
   position: absolute;
@@ -425,28 +382,10 @@ h2{
 }
 
 
-
-/* Give each cloud subtle movement */
-/* @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-} */
-
 @keyframes float {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(20px, -20px); }
 }
-
-/* @keyframes float {
-  0% { transform: translateX(-10vw) translateY(0); }
-  50% { transform: translateX(10vw) translateY(-10px); }
-  100% { transform: translateX(-10vw) translateY(0); }
-}
-
-.cloud {
-  animation: float 5s ease-in-out infinite;
-} 
-*/
 
 
 .info-panel img {
@@ -478,50 +417,25 @@ h2{
   pointer-events: none;
 }
 
-#container3D{
-    position: fixed;
-    inset: 0;
-    /* background-color: red; */
-    z-index: 100;
-    pointer-events: none;
-}
 
-
-/* #projects {
-  background: linear-gradient(135deg, #5b8dd3 0%, #949edc 80%);
-}
-
-#interests {
-  background: linear-gradient(135deg, #fbc0de 0%, #fcb191 85%);
-}
-
-/* #interests {
-  background: linear-gradient(135deg, #2f1e2f 0%, #f8b7bf 85%);
-} */ */
-
-/* PROJECTS SECTION: light warm pink/orange */
+/* Background colors */
 #projects {
   background: linear-gradient(135deg, #fbc0de 0%, #f9b6b7 80%);
 }
 
-/* INTERESTS SECTION: slightly deeper peach/pink */
+
 #interests {
   background: linear-gradient(135deg, #fcb191 0%, #e9749d 85%);
 }
 
-/* CONTACT SECTION: darkest warm tone to close the flow */
 #contact {
   background: linear-gradient(135deg, #9d7078 0%, #7a4f5c 100%);
 }
-
 
 #resume {
   background: linear-gradient(135deg, #2f2f1e 0%, #fcb191 80%);
 }
 
-/* #contact {
-  background: linear-gradient(135deg, #2f2f1e 0%, #fcb191 80%);
-} */
 
 /* Position each cloud manually */
 #cloud1 {
@@ -533,34 +447,3 @@ h2{
   top: 50%;
   right: 25%;
 }
-
-#cloud3 {
-  top: 65%;
-  left: 30%;
-}
-
-#cloud4 {
-  top: 40%;
-  right: 10%;
-}
-
-#clouds {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0; /* behind your panels/text */
-}
-
-.cloud {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  animation: float-clouds 10s ease-in-out infinite;
-}
-
-@keyframes float-clouds {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-

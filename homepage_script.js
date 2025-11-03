@@ -1,36 +1,40 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Handle cloud1 click to toggle music
+document.addEventListener("DOMContentLoaded", function() {
   const cloud = document.getElementById("cloud1");
-  const music = document.getElementById("bg-music")
+  const music = document.getElementById("bg-music");
 
-cloud.addEventListener("click", function () {
-if (music.paused) {
-    music.volume = 0.8;
-    cloud.querySelector("p").textContent = "Pause Music";
-    music.play().catch(err => console.log('Playback error:', err));
-} else {
-    music.pause(); // Optional: toggles play/pause
-    cloud.querySelector("p").textContent = "Play Music";
-} });
+  cloud.addEventListener("click", function() {
+    if (music.paused) {
+      music.volume = 0.8;
+      cloud.querySelector("p").textContent = "Pause Music";
+      music.play().catch(function(err) {
+        console.log('Playback error:', err);
+      });
+    } else {
+      music.pause();
+      cloud.querySelector("p").textContent = "Play Music";
+    }
+  });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+// Handle contact icon clicks
+document.addEventListener("DOMContentLoaded", function() {
   const contactIcons = document.querySelectorAll(".contact-icon");
 
-  contactIcons.forEach(icon => {
-    icon.addEventListener("click", () => {
+  contactIcons.forEach(function(icon) {
+    icon.addEventListener("click", function() {
       const link = icon.dataset.link;
       if (link.startsWith("mailto:")) {
-        window.location.href = link; // Opens email client
+        window.location.href = link;
       } else {
-        window.open(link, "_blank"); // Opens GitHub/LinkedIn in new tab
+        window.open(link, "_blank");
       }
     });
   });
 });
 
-
-
-document.addEventListener("DOMContentLoaded", () => {
+// Lantern XP and fact system
+document.addEventListener("DOMContentLoaded", function() {
   const cloud2 = document.getElementById("cloud2");
   const lanternsContainer = document.getElementById('lanterns-container');
   const xpFill = document.getElementById('xp-fill');
@@ -39,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let xp = 0;
   let lanternInterval;
   let factIndex = 0;
-
 
   const facts = [
     "I love web dev and web design (Check out my Figma 🎨)",
@@ -52,10 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "I've worked in both finance and tech 💼💻",
     "I care deeply about DEI and community outreach 🤝",
     "I love film photography 📸"
-    
   ];
-
-
 
   // Instruction text
   const instructionText = document.createElement('div');
@@ -73,10 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(lanternInterval);
         lanternInterval = null;
       }
-      alert("🎉 Congratulations! You've reached 100 XP and learned all about me!");
+      alert("Congratulations! You've reached 100 XP and learned all about me!");
       return;
     }
-
     const widthPercent = (xp / maxXP) * 100;
     xpFill.style.width = widthPercent + '%';
     xpCount.textContent = `XP: ${xp}`;
@@ -96,10 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.appendChild(factBox);
 
-    // Fade and float away
-    setTimeout(() => {
+    setTimeout(function() {
       factBox.classList.add('fade-out');
-      setTimeout(() => factBox.remove(), 1000);
+      setTimeout(function() { factBox.remove(); }, 1000);
     }, 2500);
   }
 
@@ -112,20 +110,20 @@ document.addEventListener("DOMContentLoaded", () => {
     lantern.style.left = Math.random() * (homeRect.width - 60) + 'px';
     lantern.style.top = Math.random() * (homeRect.height - 80) + 'px';
 
-    lantern.addEventListener('click', () => {
+    lantern.addEventListener('click', function() {
       lantern.classList.add('lantern-float');
       xp += 10;
       updateXP();
       showFactAboveLantern(lantern);
-      setTimeout(() => lantern.remove(), 2000);
+      setTimeout(function() { lantern.remove(); }, 2000);
     });
 
     lanternsContainer.appendChild(lantern);
   }
 
-  cloud2.addEventListener('click', () => {
+  cloud2.addEventListener('click', function() {
     instructionText.classList.add('visible');
-    setTimeout(() => instructionText.classList.remove('visible'), 2000);
+    setTimeout(function() { instructionText.classList.remove('visible'); }, 2000);
 
     for (let i = 0; i < 3; i++) spawnLantern();
     if (!lanternInterval) {
