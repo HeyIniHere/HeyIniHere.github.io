@@ -13,6 +13,20 @@ if (music.paused) {
 } });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const contactIcons = document.querySelectorAll(".contact-icon");
+
+  contactIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+      const link = icon.dataset.link;
+      if (link.startsWith("mailto:")) {
+        window.location.href = link; // Opens email client
+      } else {
+        window.open(link, "_blank"); // Opens GitHub/LinkedIn in new tab
+      }
+    });
+  });
+});
 
 
 

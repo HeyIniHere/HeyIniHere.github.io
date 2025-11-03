@@ -21,6 +21,22 @@ orb.addEventListener("click", () => {
   }, 1500); // Matches fade duration
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const contactIcons = document.querySelectorAll(".contact-icon");
+
+  contactIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+      const link = icon.dataset.link;
+      if (link.startsWith("mailto:")) {
+        window.location.href = link; // Opens email client
+      } else {
+        window.open(link, "_blank"); // Opens GitHub/LinkedIn in new tab
+      }
+    });
+  });
+});
+
+
 // Bird Animation
 const birdsContainer = document.getElementById('birds-container');
 const numberOfBirds = 10; // number of birds
