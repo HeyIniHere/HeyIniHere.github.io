@@ -1,7 +1,7 @@
 // Play ambient music 
 window.addEventListener('load', function() {
   setTimeout(() => {
-    music.volume = 0.8;
+    music.volume = 1.0;
     music.play().catch(() => {
       console.log("Autoplay blocked until user interacts.");
     });
