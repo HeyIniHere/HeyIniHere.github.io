@@ -247,6 +247,93 @@ p.lead {
     }
 }
 
+/*Lanterns Animation */
+.lantern {
+  position: absolute;
+  width: 60px;      /* size of lantern */
+  height: 80px;
+  background: url('assets/sky-lantern.png') no-repeat center/contain;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 1s ease, opacity 1s ease;
+  z-index: 20;
+}
+
+.lantern-float {
+  animation: floatUp 2s forwards ease-in;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Instruction text for Learn About Me */
+#instruction-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Optional: fade-in class */
+#instruction-text.visible {
+  opacity: 1;
+}
+
+/* Fact Box */
+.fact-box {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at top left, #ffbb7c 0%, #ff9773 60%, #ff6b6b 100%);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 12px;
+  white-space: nowrap;
+  display: inline-block;
+  max-width: 80vw;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 1s ease, transform 1.5s ease;
+  pointer-events: none;
+  text-align: center;
+}
+
+/* Smooth fade & float up */
+.fact-box.fade-out {
+  opacity: 0;
+  transform: translate(-50%, -120%);
+}
+
+/* Optional: glowing edge for warmth */
+.fact-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 160, 122, 0.7);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
 
 h2{
     color: #f4f0e6;

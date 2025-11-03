@@ -13,40 +13,109 @@ if (music.paused) {
 } });
 });
 
-const cloudContainer = document.getElementById("clouds");
-const numClouds = 30; 
 
-for (let i = 0; i < numClouds; i++) {
-  const cloud = document.createElement("div");
-  cloud.classList.add("cloud");
 
-  // Random position and size
-  const size = Math.random() * 120 + 80; // 80–200px
-  cloud.style.width = `${size}px`;
-  cloud.style.height = `${size * 0.6}px`;
-  cloud.style.top = `${Math.random() * 80}%`;
-  cloud.style.left = `${Math.random() * 90}%`;
-  cloud.style.opacity = 0.4 + Math.random() * 0.3;
 
-  // Random animation timing so they don’t sync
-  cloud.style.animationDuration = `${8 + Math.random() * 6}s`;
-  cloud.style.animationDelay = `${Math.random() * 5}s`;
+document.addEventListener("DOMContentLoaded", () => {
+  const cloud2 = document.getElementById("cloud2");
+  const lanternsContainer = document.getElementById('lanterns-container');
+  const xpFill = document.getElementById('xp-fill');
+  const xpCount = document.getElementById('xp-count');
 
-  cloudContainer.appendChild(cloud);
-}
+  let xp = 0;
+  let lanternInterval;
+  let factIndex = 0;
 
-let xp = 0;            // starting XP
-const xpFill = document.getElementById('xp-fill');
-const xpCount = document.getElementById('xp-count');
-const maxXP = 100;      // XP for level up
 
-function gainXP(amount) {
-  xp += amount;
-  if (xp > maxXP) xp = maxXP;
-  const percent = (xp / maxXP) * 100;
-  xpFill.style.width = percent + '%';
-  xpCount.textContent = `XP: ${xp}`;
-}
+  const facts = [
+    "I love web dev and web design (Check out my Figma 🎨)",
+    "I am Nigerian and I speak Ibibio",
+    "I play the lever harp 🎵",
+    "I have a degree in computer science and mechanical engineering💡",
+    "I enjoy about African literature 📚",
+    "My preferred programming language is Python 🐍",
+    "I have experience with CAD and 3D modeling withs Solidworks ️🛠",
+    "I've worked in both finance and tech 💼💻",
+    "I care deeply about DEI and community outreach 🤝",
+    "I love film photography 📸"
+    
+  ];
 
-// Example usage: gain 10 XP every 3 seconds
-setInterval(() => gainXP(10), 3000);
+
+
+  // Instruction text
+  const instructionText = document.createElement('div');
+  instructionText.id = 'instruction-text';
+  instructionText.textContent = "Click on the lanterns to gain XP and learn facts about me!";
+  document.body.appendChild(instructionText);
+
+  function updateXP() {
+    const maxXP = 100;
+    if (xp >= maxXP) {
+      xp = 0;
+      xpFill.style.width = '0%';
+      xpCount.textContent = `XP: ${xp}`;
+      if (lanternInterval) {
+        clearInterval(lanternInterval);
+        lanternInterval = null;
+      }
+      alert("🎉 Congratulations! You've reached 100 XP and learned all about me!");
+      return;
+    }
+
+    const widthPercent = (xp / maxXP) * 100;
+    xpFill.style.width = widthPercent + '%';
+    xpCount.textContent = `XP: ${xp}`;
+  }
+
+  function showFactAboveLantern(lantern) {
+    if (factIndex >= facts.length) factIndex = 0;
+
+    const factBox = document.createElement('div');
+    factBox.classList.add('fact-box');
+    factBox.textContent = facts[factIndex];
+    factIndex++;
+
+    const rect = lantern.getBoundingClientRect();
+    factBox.style.left = `${rect.left + rect.width / 2}px`;
+    factBox.style.top = `${rect.top - 50}px`;
+
+    document.body.appendChild(factBox);
+
+    // Fade and float away
+    setTimeout(() => {
+      factBox.classList.add('fade-out');
+      setTimeout(() => factBox.remove(), 1000);
+    }, 2500);
+  }
+
+  function spawnLantern() {
+    const lantern = document.createElement('div');
+    lantern.classList.add('lantern');
+
+    const homeSection = document.getElementById('home');
+    const homeRect = homeSection.getBoundingClientRect();
+    lantern.style.left = Math.random() * (homeRect.width - 60) + 'px';
+    lantern.style.top = Math.random() * (homeRect.height - 80) + 'px';
+
+    lantern.addEventListener('click', () => {
+      lantern.classList.add('lantern-float');
+      xp += 10;
+      updateXP();
+      showFactAboveLantern(lantern);
+      setTimeout(() => lantern.remove(), 2000);
+    });
+
+    lanternsContainer.appendChild(lantern);
+  }
+
+  cloud2.addEventListener('click', () => {
+    instructionText.classList.add('visible');
+    setTimeout(() => instructionText.classList.remove('visible'), 2000);
+
+    for (let i = 0; i < 3; i++) spawnLantern();
+    if (!lanternInterval) {
+      lanternInterval = setInterval(spawnLantern, 2000);
+    }
+  });
+});
