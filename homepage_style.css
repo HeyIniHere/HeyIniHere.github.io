@@ -65,6 +65,39 @@ nav a:hover {
     color: var(--accent); 
 }
 
+/* XP bar in header */
+.xp-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.xp-bar {
+  width: 280px;       /* adjust width */
+  height: 14px;       /* adjust height */
+  background: rgba(255, 255, 255, 0.2); /* semi-transparent to match background */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 4px;
+}
+
+.xp-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #e9749d, #fcb191); /* matching your accent palette */
+  border-radius: 12px 0 0 12px;
+  transition: width 0.5s ease;
+}
+
+#xp-count {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+
 /* Main layout */
 main {
     scroll-snap-type: y mandatory;
@@ -175,28 +208,46 @@ p.lead {
 }
 
 .card {
-    background: var(--card);
-    padding: 14px;
-    border-radius: 10px;
-    border: 1px solid rgba(250, 170, 190, 0.4);
-    cursor: pointer;
+  background: var(--card);
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(250, 170, 190, 0.4);
+  cursor: pointer;
+  color: var(--muted);
 }
-.card h3 { 
-    margin: 0 0 6px 0; 
+
+/* Moving Clouds Animation */
+/* Bottom cloud animation */
+.bottom-clouds {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    pointer-events: none; /* so clouds don’t block interaction */
+    height: 100%; /* adjust as needed */
+    z-index: 10;
 }
-.card p { 
-    margin: 0; 
-    color: var(--muted); 
-    font-size: 14px; 
+
+.bottom-clouds img {
+    position: absolute;
+    bottom: 0;
+    opacity: 0.6;
+    animation: moveCloud calc(8s * var(--i)) linear infinite;
+    max-width: 100%; /* adjust size of clouds */
+}
+
+/* Cloud movement keyframes */
+@keyframes moveCloud {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+        transform: translateX(110%);
+    }
 }
 
 
-
-/* #jungle-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-  } */
 h2{
     color: #f4f0e6;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
@@ -230,7 +281,7 @@ h2{
 }
 
 /* Floating info panels */
-/* 🌤️ Cloudy info panels */
+/* Cloudy info panels */
 .info-panel {
   position: absolute;
   display: flex;
@@ -245,6 +296,8 @@ h2{
   transition: transform 0.5s ease, opacity 0.3s ease;
   animation: float 6s ease-in-out infinite;
 }
+
+
 
 /* Give each cloud subtle movement */
 /* @keyframes float {
@@ -267,6 +320,7 @@ h2{
   animation: float 5s ease-in-out infinite;
 } 
 */
+
 
 .info-panel img {
   width: 50px;
@@ -306,21 +360,41 @@ h2{
 }
 
 
-#projects {
-    background: linear-gradient(135deg, #1e1e2f 0%, #5b8dd3 80%);
+/* #projects {
+  background: linear-gradient(135deg, #5b8dd3 0%, #949edc 80%);
 }
 
 #interests {
-  background: linear-gradient(135deg, #2f1e2f 0%, #f8b7bf 85%);
+  background: linear-gradient(135deg, #fbc0de 0%, #fcb191 85%);
 }
+
+/* #interests {
+  background: linear-gradient(135deg, #2f1e2f 0%, #f8b7bf 85%);
+} */ */
+
+/* PROJECTS SECTION: light warm pink/orange */
+#projects {
+  background: linear-gradient(135deg, #fbc0de 0%, #f9b6b7 80%);
+}
+
+/* INTERESTS SECTION: slightly deeper peach/pink */
+#interests {
+  background: linear-gradient(135deg, #fcb191 0%, #e9749d 85%);
+}
+
+/* CONTACT SECTION: darkest warm tone to close the flow */
+#contact {
+  background: linear-gradient(135deg, #9d7078 0%, #7a4f5c 100%);
+}
+
 
 #resume {
   background: linear-gradient(135deg, #2f2f1e 0%, #fcb191 80%);
 }
 
-#contact {
+/* #contact {
   background: linear-gradient(135deg, #2f2f1e 0%, #fcb191 80%);
-}
+} */
 
 /* Position each cloud manually */
 #cloud1 {
