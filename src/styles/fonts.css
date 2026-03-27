@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1, h2, h3, .display-text {
+  font-family: 'Noto Serif', serif;
+  letter-spacing: -0.02em;
+}
+
+.label-text {
+  font-family: 'Manrope', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
